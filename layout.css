@@ -1,0 +1,104 @@
+header {
+  position: absolute;
+  top: 0px;
+  height: 60px;
+  width: 100%;
+}
+
+aside {
+  position: absolute;
+  top: 60px;
+  height: 60px;
+  width: 100%;
+  animation: aside-anim-from .8s ease-in;
+}
+
+main {
+  position: absolute;
+  top: 120px;
+  height: calc(100% - 120px);
+  width: 100%;
+  animation: main-anim-from .8s ease-in;
+}
+
+footer {
+  position: absolute;
+  bottom: 0px;
+  height: 60px;
+  width: 100%;
+}
+
+@media screen and (min-width: 720px) {
+  main {
+    transform: translate(200px, -60px);
+    height: calc(100% - 120px);
+    width: calc(100% - 200px);
+    animation: main-anim-to .8s ease-in;
+  }
+  aside {
+    width: 200px;
+    height: calc(100% - 120px);
+    animation: aside-anim-to .8s ease-in;
+  }
+}
+
+@keyframes aside-anim-to {
+  0% {
+    width: 100%;
+    height: 60px;
+  }
+  50% {
+    width: 200px;
+    height: 60px;
+  }
+  100% {
+    height: calc(100% - 120px);
+  }
+}
+
+@keyframes main-anim-to {
+  0% {
+    transform: translate(0px, 0px);
+    height: calc(100% - 120px);
+    width: calc(100% - 0px);
+  }
+  50% {
+    transform: translate(200px, 0px);
+    width: calc(100% - 200px);
+  }
+  100% {
+    transform: translate(200px, -60px);
+    height: calc(100% - 120px);
+  }
+}
+
+@keyframes aside-anim-from {
+  0% {
+    width: 200px;
+    height: calc(100% - 120px);
+  }
+  50% {
+    width: 200px;
+    height: 60px;
+  }
+  100% {
+    width: 100%;
+    height: 60px;
+  }
+}
+
+@keyframes main-anim-from {
+  0% {
+    transform: translate(200px, -60px);
+    height: calc(100% - 120px);
+  }
+  50% {
+    transform: translate(200px, 0px);
+    width: calc(100% - 200px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+    height: calc(100% - 120px);
+    width: calc(100% - 0px);
+  }
+}
